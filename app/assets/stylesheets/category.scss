@@ -1,0 +1,22 @@
+.image {
+  width: 60px;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+  padding: 10px;
+}
+
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #5fb523;
+  padding: 1rem;
+}
+
+.buttons {
+  border: 2px solid white;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}

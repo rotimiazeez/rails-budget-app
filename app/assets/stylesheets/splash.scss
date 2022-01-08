@@ -1,0 +1,17 @@
+.splash-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.splash-title {
+  margin: 15rem 0;
+  font-size: 4rem;
+}
+
+.splash-links {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}

@@ -1,0 +1,9 @@
+<div class='default-font'>
+	<div class='m-2 p-4 card is-flex is-justify-content-space-between'>
+		<div>
+			<h5 class='mb-2 has-text-grey'><%= activity.name %></h5>
+			<small><%= activity.created_at.strftime("%d %b %Y") %></small>
+		</div>
+		<h6 class='has-text-weight-semibold'>$<%= activity.amount %></h6>
+	</div>
+</div>

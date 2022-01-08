@@ -1,32 +1,16 @@
-<%= form_with(model: category) do |form| %>
-  <% if category.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
-      <ul>
-        <% category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+<div class='default-font'>
+  <%= form_with(model: category) do |form| %>
+    <div class='login-header is-flex is-justify-content-space-between is-align-items-center p-2 mb-2'>
+      <%= link_to 'BACK', categories_path, class: "has-text-white is-size-7" %>
+      <div>
+        <p class="has-text-white is-size-5">NEW CATEGORY</p>
+      </div>
+      <%= form.submit "SAVE", class:'form-submit has-text-white is-size-7'%>
+    </div>
+    <%= render "devise/shared/error_messages", resource: category %>
+    <div>
+      <%= form.text_field :name, autocomplete: "name", placeholder: "Name", class: "input", required: true %>
+      <%= form.text_field :icon, autocomplete: "icon", placeholder: "Icon", class: "input", required: true %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
-  </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
