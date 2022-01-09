@@ -1,0 +1,16 @@
+<div class='default-font'>
+  <%= form_with(model: category) do |form| %>
+    <div class='login-header is-flex is-justify-content-space-between is-align-items-center p-2 mb-2'>
+      <%= link_to 'BACK', categories_path, class: "has-text-white is-size-7" %>
+      <div>
+        <p class="has-text-white is-size-5">NEW CATEGORY</p>
+      </div>
+      <%= form.submit "SAVE", class:'form-submit has-text-white is-size-7'%>
+    </div>
+    <%= render "devise/shared/error_messages", resource: category %>
+    <div>
+      <%= form.text_field :name, autocomplete: "name", placeholder: "Name", class: "input", required: true %>
+      <%= form.text_field :icon, autocomplete: "icon", placeholder: "Icon", class: "input", required: true %>
+    </div>
+  <% end %>
+</div>

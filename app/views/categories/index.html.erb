@@ -1,0 +1,22 @@
+<div class='default-font'>
+  <header class='login-header is-flex is-justify-content-space-between is-align-items-center p-2 mb-2'>
+    <span></span>
+    <span class="has-text-white is-size-4">CATEGORIES</span>
+    <%= link_to "Log out", destroy_user_session_path, class:'form-submit has-text-white is-size-7', method: :delete %>
+  </header>
+  <ul>
+    <% if @categories.empty? %>
+      <div>
+        No categories for now
+      </div>
+    <% else %>
+      <% @categories.each do |category| %>
+        <%= render partial: 'category', locals: { category: category } %> 
+      <% end %>
+    <% end %>
+  </ul>
+
+  <footer class='page-footer'>
+    <%= link_to 'ADD A NEW CATEGORY', new_category_path, class: 'buttons has-text-white has-text-weight-medium' %>
+  </footer>
+</div>
