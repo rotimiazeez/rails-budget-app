@@ -1,0 +1,29 @@
+<div class='default-font'>
+  <header class='login-header is-flex is-justify-content-space-between is-align-items-center p-2 mb-2'>
+	  <%= link_to 'Back', categories_path, class:'form-submit has-text-white is-size-6' %>
+    <h1 class="has-text-white is-size-4">TRANSACTIONS</h1>
+    <span></span>
+  </header>
+  <div>
+    <div class='is-flex is-justify-content-space-between pt-3 px-3'>
+      <p>Gift Credit:</p>
+      <p class='has-text-weight-semibold'>$<%= @category.total_amount %></p>
+    </div>
+    <hr>
+  </div>
+  
+  <ul>
+  <% if @activities.empty? %>
+    <div class='has-text-centered'>
+      No Transactions for now
+    </div>
+  <% else %>
+    <% @activities.each do |activity| %>
+      <%= render partial: 'activities/index', locals: { activity: activity } %>
+    <% end %>
+  <% end %>
+  </ul>
+</div>
+<footer class='page-footer default-font'>
+  <%= link_to 'ADD A NEW TRANSACTION', new_activity_path, class: 'buttons has-text-white has-text-weight-medium' %>
+</footer>
